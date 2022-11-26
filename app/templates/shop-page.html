@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+{% block title %}
+Услуги
+{% endblock %}
+
+{% block main %}
+
+
+
+    <main>
+        <div class="container">
+            <div class="merch-wrap my-3">
+                <div class="row">
+                    <div class="col-md-8">
+                        <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-indicators">
+                              <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"
+                                aria-label="Slide 1"></button>
+                              <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"
+                                class=""></button>
+                           
+                            </div>
+                            <div class="carousel-inner">
+                              <div class="carousel-item active">
+                                <div class="img-index-wrapper">
+                                  <img src="../static/img/shop/futbolka.jpg" height="900" alt="">
+                                </div>
+                                <div class="container">
+                                  <div class="carousel-caption">
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="carousel-item">
+                                <div class="img-index-wrapper"> 
+                                <img src="../static/img/shop/futbolka-man.jpg" height="900" alt="" >
+                              </div>
+                                <div class="container">
+                                  <div class="carousel-caption">
+                                  </div>
+                                </div>
+                              </div>
+                              
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+                              <span class="carousel-control-prev-icon bg-dark" aria-hidden="true"></span>
+                              <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+                              <span class="carousel-control-next-icon bg-dark" aria-hidden="true"></span>
+                              <span class="visually-hidden">Next</span>
+                            </button>
+                          </div>
+
+                          <h3>Отзывы:</h3>
+
+
+                          <div class="comment">
+
+                          </div>
+
+                          {%if 'name' in session%}
+                          <h5>Добавить отзыв:</h5>
+                            <form class="my-2" method="post" >
+                              <div class="mb-3">
+                                <textarea name="text" id="textArea" cols="10" class="w-100" rows="10" id="exampleInputEmail1"></textarea >
+                              </div> 
+                              <button type="submit" class="btn btn-dark">Отправить</button>
+                            </form>
+                            {% endif %}
+                    </div>
+
+                    <aside class="col-md-4">
+                        <h2>Фирменная футболка</h2>
+                        <h3 class="text-muted">30.00 BYN</h3>
+                        <h4>Описание</h4>
+                        <p>Данный товар является частью проекта Magenta Merch - специального раздела нашего каталога, где мы собрали экологичные, этичные, инклюзивные и благотворительные товары.</p>
+                        <p>Товар произведен в стране присутствия Magenta, что позволяет нам оптимизировать выбросы СО2 при доставке. Покупая этот товар, вы вносите свой вклад в сокращение углеродного следа и поддерживаете развитие локальных фабрик.</p>
+                        <ul class="list-group list-group-flush my-3">
+                            <li class="list-group-item"> <span class="text-muted">Цвет</span> - Черный </li>
+                            <li class="list-group-item"> <span class="text-muted">Состав</span> - Хлопок - 95%, Лайкра - 5% </li>
+                            <li class="list-group-item"> <span class="text-muted">Материал подкладки</span> - Без подкладки </li>
+                            <li class="list-group-item"> <span class="text-muted">Длина</span> - 68 см </li>
+                            <li class="list-group-item"> <span class="text-muted">Сезон</span> - Мульти </li>
+                            <li class="list-group-item"> <span class="text-muted">Страна производитель</span> - Беларусь </li>
+                        </ul>
+                        <a href="#" class="btn btn-dark"> <i class="bi bi-cart"></i> Добавить в корзину</a>
+                    </aside>
+                   
+         
+              
+                </div>
+            </div>
+        </div>
+    </main>
+
+    {% endblock %}

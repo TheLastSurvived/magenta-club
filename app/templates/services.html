@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% block title %}
+Услуги
+{% endblock %}
+
+{% block main %}
+
+
+<main>
+  <div class="container my-5">
+    <div class="row featurette" data-aos="flip-left" align="center" id="price">
+      <h2>СТОИМОСТЬ УСЛУГ</h2>
+
+      {% for el in service%}
+      <h3 class="mt-3">{{el.title_service}}</h3>
+      <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+        <div class="col">
+          <div class="card mb-4 rounded-3 shadow-sm">
+            <div class="card-header py-3">
+              <h4 class="my-0 fw-normal">Общий зал</h4>
+            </div>
+            <div class="card-body">
+              <h1 class="card-title pricing-card-title">{{el.common}} BYN<small class="text-muted fw-light"></small></h1>
+              <a href="/buy_service/{{el.common}}/Общий зал/{{el.title_service}}" class="w-100 btn btn-lg btn-dark">Заказать</a>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card mb-4 rounded-3 shadow-sm">
+            <div class="card-header py-3">
+              <h4 class="my-0 fw-normal">VIP</h4>
+            </div>
+            <div class="card-body">
+              <h1 class="card-title pricing-card-title">{{el.vip}} BYN<small class="text-muted fw-light"></small></h1>
+              <a href="/buy_service/{{el.vip}}/VIP/{{el.title_service}}" class="w-100 btn btn-lg btn-dark">Заказать</a>           
+             </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card mb-4 rounded-3 shadow-sm border-dark">
+            <div class="card-header py-3 text-bg-dark border-dark">
+              <h4 class="my-0 fw-normal">Буткемп</h4>
+            </div>
+            <div class="card-body">
+              <h1 class="card-title pricing-card-title">{{el.bootcamp}} BYN<small class="text-muted fw-light"></small></h1>
+              <a href="/buy_service/{{el.bootcamp}}/Буткемп/{{el.title_service}}" class="w-100 btn btn-lg btn-dark">Заказать</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      {%endfor%} 
+     
+
+    </div>
+  </div>
+</main>
+{% endblock %}

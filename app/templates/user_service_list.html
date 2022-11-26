@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block title %}
+Список заканах услуг
+{% endblock %}
+
+
+{% block main %}
+<main>
+    <div class="container">
+
+        {%if orders and img_list%}
+        {% for el,img in zip(orders,img_list)%}
+        {%if el.user_id==active_user.id%}
+        <div class="container-fluid bg-light rounded-3 p-5 my-3 d-flex justify-content-between">
+            <div class="">
+                <h1 class="display-5 fw-bold">{{el.service_name}}</h1>
+                <p class="fs-4">Тип: {{el.service_type}}</p>
+                <small>{{el.date.strftime('%d.%m.%Y')}}</small>
+            </div>
+            <img src="data:;base64,{{img}}" alt="">
+        </div>
+        {%endif%}
+        {%endfor%} 
+        {%else%}
+        <h1 class="my-3 text-center">Вы не заказывали никаких услуг!</h1>
+        {%endif%}
+    </div>
+</main>
+
+{% endblock %}

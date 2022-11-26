@@ -1,0 +1,346 @@
+{% extends 'base.html' %}
+{% block title %}
+Magenta
+{% endblock %}
+
+
+{% block css %}
+<link rel="stylesheet" href="../static/css/aos.css">
+{% endblock %}
+
+{% block main %}
+<main>
+  <div class="container">
+    <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"
+          aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2" class=""></button>
+        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3" class=""
+          aria-current="true"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="img-index-wrapper">
+            <img src="../static/img/комп1.jpg" alt="">
+          </div>
+          <div class="container">
+            <div class="carousel-caption">
+              <h1 class="">Игра начинается!</h1>
+              <p>Magenta – компьютерный клуб в Гродно, где каждый гость найдет себе занятие по душе. Дымная зона лаунж
+                с кальянами, бар в стиле лофт с чайной и коктейльной картами, большой выбор настольных игр, и, конечно
+                же, зона gaming.</p>
+              <p><a class="btn btn-lg btn-primary" href="services.html">Забронировать место!</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="img-index-wrapper">
+            <img src="../static/img/комп2.jpg" alt="">
+          </div>
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Топовое железо!</h1>
+              <p>Мы приглашаем вас в мир Кибер вселенной Magenta. 46 машин с отменным железом, комфортные
+                профессиональные кресла и большой выбор игр на любой вкус вы найдете в нашем Игровом зале.</p>
+              <p><a class="btn btn-lg btn-primary" href="services.html">Забронировать место!</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item ">
+          <div class="img-index-wrapper">
+            <img src="../static/img/комп3.jpg" alt="" width="100%">
+          </div>
+          <div class="container">
+            <div class="carousel-caption ">
+              <h1>Турниры!</h1>
+              <p>Для для просмотра турниров наш клуб предлагает 3 комфортные зоны с диванами и TV.</p>
+              <p><a class="btn btn-lg btn-primary" href="services.html">Забронировать место!</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon bg-dark" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon bg-dark" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+
+  <div class="container marketing">
+
+
+
+
+    <!-- START THE FEATURETTES -->
+
+
+    <hr class="featurette-divider my-5">
+
+    <div class="row featurette" data-aos="flip-left">
+      <div class="col-md-7 order-md-2">
+        <h2 class="featurette-heading fw-normal lh-1">О компьютерном клубе <span class="text-muted"></span></h2>
+        <p class="lead">Magenta – это уютный компьютерный клуб, оборудованный всем необходимым для качественной и
+          атмосферной онлайн-игры. К нам в киберклуб приходят ценители активного киберспортивного и виртуального
+          отдыха, а также для того, чтоб найти единомышленников. Благодаря производительным компьютером вы можете
+          поиграть в любую новинку или состязаться с мощным онлайн-противником без подвисания компьютера и «глюков».
+        </p>
+      </div>
+      <div class="col-md-5 order-md-1">
+        <img src="../static/img/about.jpg" alt="" width="100%">
+      </div>
+    </div>
+
+    <hr class="featurette-divider my-5">
+
+    <div class="row featurette" data-aos="flip-left">
+      <div class="col-md-7">
+        <h2 class="featurette-heading fw-normal lh-1">Топовое <span class="">оборудование</span></h2>
+        <p class="lead">
+        <ul class="list-group equipment">
+          <li>Процессор: INTEL CORE I5-11400</li>
+          <li>Видеокарта: PALIT GEFORCE RTX 3060 DUAL OC</li>
+          <li>RAM: 16GB DDR4 3200MHZ</li>
+          <li>SSD: SSD 240 GB + 4TB SSD</li>
+          <li>Монитор: 24 LG ULTRAGEAR 24GN600-B 144HZ IPS</li>
+          <li>Гарнитура: HYPERX CLOUD ALPHA S</li>
+          <li>Мышь: HYPERX PULSEFIRE SURGE</li>
+          <li>Клавиатура: HYPERX ALLOY ORIGINS CORE </li>
+          <li>Кресла: DXRACER </li>
+        </ul>
+        Наш компьютерный клуб - кибер пространство, с самым мощным железом и топовыми игровыми креслами. В нашем клубе
+        у вас есть возможность не только играть в любимую игру на ультрамощном компьютере, но и подымить любимый
+        кальян в хорошей компании (VIP).
+        </p>
+      </div>
+      <div class="col-md-5 bg-dark rounded-circle">
+        <div id="Carousel2" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#Carousel2" data-bs-slide-to="0" class="active"
+              aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#Carousel2" data-bs-slide-to="1" aria-label="Slide 2"
+              class=""></button>
+            <button type="button" data-bs-target="#Carousel2" data-bs-slide-to="2" aria-label="Slide 3" class=""
+              aria-current="true"></button>
+            <button type="button" data-bs-target="#Carousel2" data-bs-slide-to="3" aria-label="Slide 4" class=""
+              aria-current="true"></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="../static/img/equipment/1.webp" alt="" width="100%">
+            </div>
+            <div class="carousel-item ">
+              <img src="../static/img/equipment/2.webp" alt="" width="100%">
+            </div>
+            <div class="carousel-item ">
+              <img src="../static/img/equipment/3.png" alt="" width="100%">
+            </div>
+            <div class="carousel-item ">
+              <img src="../static/img/equipment/4.png" alt="" width="100%">
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#Carousel2" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#Carousel2" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+
+
+    <hr class="featurette-divider my-5">
+
+    <div class="row featurette" data-aos="flip-left" id="regulations">
+      <div class="col-md-5">
+        <img src="../static/img/tyler_durden.jpeg" width="100%" alt="">
+      </div>
+      <div class="col-md-7" align="center">
+        <h2 class="featurette-heading fw-normal lh-1">ПРАВИЛА КЛУБА </h2>
+        <p class="lead">
+        <p class="w-50">
+          <button class="btn btn-dark" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample1"
+            aria-expanded="false" aria-controls="collapseExample">
+            ОБЩИЕ ПОЛОЖЕНИЯ
+          </button>
+          <button class="btn btn-dark my-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample2"
+            aria-expanded="false" aria-controls="collapseExample">
+            ПОСЕТИТЕЛЯМ ЗАПРЕЩАЕТСЯ
+          </button>
+          <button class="btn btn-dark" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample3"
+            aria-expanded="false" aria-controls="collapseExample">
+            ПОСЕТИТЕЛЬ ИМЕЕТ ПРАВО
+          </button>
+        </p>
+        <div class="collapse" id="collapseExample1">
+          <div class="card card-body">
+            <h2>ОБЩИЕ ПОЛОЖЕНИЯ</h2>
+            <ul>
+              <li>
+                Управляющие компьютерного клуба Magenta могут отказывать посетителям в пребывании на территории и
+                предоставлении услуг в случае невыполнения указанных ниже Правил или по другим обоснованным причинам.
+                Просим обратить внимание, что внесенные за услуги аренды ПК денежные средства в этом случае не
+                возвращаются.
+              </li>
+              <li>
+                Если посетитель компьютерного клуба приносит преднамеренный ущерб имуществу, то он обязан возместить
+                его в денежном эквиваленте причиненного вреда. В случае нарушения этого правила, посетитель несет
+                административную ответственность, что регламентирует законодательство РБ.
+              </li>
+              <li>
+                Руководители и сотрудники киберспортивных заведений не несут персональной ответственности за предметы,
+                личные вещи и имущество посетителей, оставленные в заведении без присмотра.
+              </li>
+            </ul>
+            Если имели место непреодолимые обстоятельства, помешавшие нашим заведениям качественно и в полном объеме
+            предоставить услуги посетителям (отключение сети Интернет или электричества, пожар, другие аварийные
+            ситуации), то Администрация прилагает усилия для компенсации понесенного ущерба.
+          </div>
+        </div>
+        <div class="collapse" id="collapseExample2">
+          <div class="card card-body">
+            <h2>ПОСЕТИТЕЛЯМ ЗАПРЕЩАЕТСЯ</h2>
+            <ul>
+              <li>
+                Посещать территорию кибер клуба со своими продуктами и напитками, а также употреблять их.
+              </li>
+              <li>
+                Курить сигареты в помещение на территории киберклуба.
+              </li>
+              <li>
+                Находиться в состоянии алкогольного и наркотического опьянения. Употреблять спиртные напитки в клубе.
+              </li>
+              <li>
+                Использовать нецензурную лексику, бранные слова, а также действовать неуважительно по отношению к
+                другим посетителям и персоналу клуба.
+              </li>
+              <li>
+                Применять кейлогеры, читы, коды, а также другие типы шпионского и хакерского программного обеспечения.
+              </li>
+              <li>
+                Спать в клубе (в том числе при наличии оплаченного игрового времени).
+              </li>
+              <li>
+                Оставлять в компьютерном клубе и на прилегающей территории мусор.
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="collapse" id="collapseExample3">
+          <div class="card card-body">
+            <h2> ПОСЕТИТЕЛЬ ИМЕЕТ ПРАВО</h2>
+            <ul>
+              <li>
+                Заранее забронировать по телефону или личным присутствием необходимое количество оборудования на
+                установленное время. Если бронь не была подтверждена личным присутствием или звонком в указанный срок,
+                то администрация может ее снять в одностороннем порядке. </li>
+              <li>
+                Перенести оставшееся время аренды с одного компьютера на другое, для чего обращаются к администратору
+                клуба. Перенос времени возможен, если в центре на данный момент времени имеются свободные ПК.
+              </li>
+              <li>
+                Попросить сотрудника клуба настроить компьютер, периферийное устройство или софт, заменить
+                оборудование на аналогичное в случае неисправности или нестабильной работы.
+              </li>
+              <li>
+                За отдельную плату посетитель может взять в аренду девайсы премиального уровня (мониторы, гарнитура,
+                мышь, клавиатура и т. д.). </li>
+              <li>
+                Использовать на период аренды компьютера личные девайсы (клавиатуру, наушники, мышь, коврики и т. д.)
+                вместо предложенных клубом.
+              </li>
+
+
+              <li>
+                Приобретать в кибер-баре нашего клуба или установленных вендинговых аппаратах пищу, горячие или
+                прохладительные напитки.
+              </li>
+            </ul>
+          </div>
+        </div>
+        </p>
+      </div>
+
+    </div>
+
+    <hr class="featurette-divider mt-5">
+
+    <!-- /END THE FEATURETTES -->
+    <!-- Three columns of text below the carousel -->
+    <div class="row my-2" align="center">
+      <h1 class="mb-5">ПОПУЛЯРНЫЕ ИГРЫ</h1>
+      <div class="col-lg-4" data-aos="flip-down">
+        <img src="../static/img/games/pubg.webp" width="200" alt="">
+        <h2 class="fw-normal">PUBG</h2>
+        <p>Многопользовательская онлайн-игра в жанре королевской битвы, разрабатываемая и издаваемая студией PUBG
+          Corporation</p>
+      </div><!-- /.col-lg-4 -->
+      <div class="col-lg-4" data-aos="flip-down">
+        <img src="../static/img/games/cs go.webp" width="200" alt="">
+        <h2 class="fw-normal">CS GO</h2>
+        <p>Многопользовательская компьютерная игра, разработанная компаниями Valve и Hidden Path Entertainment</p>
+      </div><!-- /.col-lg-4 -->
+      <div class="col-lg-4" data-aos="flip-down">
+        <img src="../static/img/games/dota2.webp" width="200" alt="">
+        <h2 class="fw-normal">DOTA 2</h2>
+        <p>Многопользовательская командная компьютерная игра в жанре MOBA, разработанная и изданная корпорацией Valve
+        </p>
+      </div><!-- /.col-lg-4 -->
+      <div class="col-lg-4" data-aos="flip-down">
+        <img src="../static/img/games/lol.webp" width="200" alt="">
+        <h2 class="fw-normal">League of Legend</h2>
+        <p>Многопользовательская компьютерная игра в жанре MOBA, разработанная и выпущенная американской компанией
+          Riot Games</p>
+      </div><!-- /.col-lg-4 -->
+      <div class="col-lg-4" data-aos="flip-down">
+        <img src="../static/img/games/Quake.webp" width="200" alt="">
+        <h2 class="fw-normal">Quake 3 Arena</h2>
+        <p>Компьютерная игра в жанре шутера от первого лица, разработанная студией id Software и изданная компанией
+          Activision</p>
+      </div><!-- /.col-lg-4 -->
+      <div class="col-lg-4" data-aos="flip-down">
+        <img src="../static/img/games/starcraft.webp" width="200" alt="">
+        <h2 class="fw-normal">Starctaft 2</h2>
+        <p>Многопользовательская онлайн-игра в жанре стратегии в реальном времени разработанная и изданная корпорацией
+          Blizzard Entertainment</p>
+      </div><!-- /.col-lg-4 -->
+      <div class="col-lg-4" data-aos="flip-down">
+        <img src="../static/img/games/hearthstone.webp" width="200" alt="">
+        <h2 class="fw-normal">Hearthstone</h2>
+        <p>Коллекционная карточная онлайн-игра по мотивам вселенной Warcraft, разработанная компанией Blizzard
+          Entertainment</p>
+      </div><!-- /.col-lg-4 -->
+      <div class="col-lg-4" data-aos="flip-down">
+        <img src="../static/img/games/overwatch.webp" width="200" alt="">
+        <h2 class="fw-normal">Overwatch</h2>
+        <p>Многопользовательская компьютерная игра в жанре шутера от первого лица, разработанная и выпущенная
+          компанией Blizzard Entertainment</p>
+      </div><!-- /.col-lg-4 -->
+      <div class="col-lg-4" data-aos="flip-down">
+        <img src="../static/img/games/wot.webp" width="200" alt="">
+        <h2 class="fw-normal">World of Tanks</h2>
+        <p>Клиентская командная массовая многопользовательская онлайн-игра, посвящённая бронированным машинам середины
+          XX века</p>
+      </div><!-- /.col-lg-4 -->
+    </div><!-- /.row -->
+  </div>
+</main>
+{% endblock %}
+
+{% block js %}
+<script src="../static/js/aos.js"></script>
+<script src="../static/js/aos-run.js"></script>
+{% endblock %}
+
+</body>
+
+</html>
