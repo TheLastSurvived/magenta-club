@@ -8,6 +8,7 @@ from  sqlalchemy.sql.expression import func
 from cloudipsp import Api, Checkout
 import qrcode
 
+
 @app.route('/')
 def index():
     return render_template("index.html")
@@ -69,7 +70,7 @@ def news():
         try:
             title = request.form.get('title')
             category = request.form.get('category')
-            text = request.form.get('text')
+            text = request.form.get('ckeditor')
             image = request.files['image']
             news = News(title=title,category=category,text=text,image=image.read(),image_name=image.filename)
             db.session.add(news)
@@ -113,7 +114,7 @@ def edit_news(id):
         try:
             title = request.form.get('title')
             category = request.form.get('category')
-            text = request.form.get('text')
+            text = request.form.get('ckeditor')
             image = request.files['image']
             news = News.query.filter_by(id=id).first()
             news.title = title

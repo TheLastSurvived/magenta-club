@@ -4,7 +4,7 @@
 {% endblock %}
 
 {% block main %}
-
+{{ ckeditor.load() }}
     <main>
         <div class="container">
             <div class="row">
@@ -44,8 +44,7 @@
                             <div class="mb-3">
                               
                               <label for="exampleInputEmail1" class="form-label">Содержание новости</label>
-                              <textarea name="text" id="textArea" cols="10" class="w-100" rows="10" id="exampleInputEmail1"></textarea >
-                                <input type="button" value="Добавить абзац" class="btn btn-primary" id="add_p">
+                              {{ ckeditor.create() }}
                             </div>
                   
                             <button type="submit" class="btn btn-dark">Добавить новость</button>
