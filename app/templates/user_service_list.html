@@ -8,8 +8,8 @@
 <main>
     <div class="container">
 
-        {%if orders and img_list%}
-        {% for el,img in zip(orders,img_list)%}
+        {%if orders%}
+        {% for el in orders%}
         {%if el.user_id==active_user.id%}
         <div class="container-fluid bg-light rounded-3 p-5 my-3 d-flex justify-content-between">
             <div class="">
@@ -17,7 +17,7 @@
                 <p class="fs-4">Тип: {{el.service_type}}</p>
                 <small>{{el.date.strftime('%d.%m.%Y')}}</small>
             </div>
-            <img src="data:;base64,{{img}}" alt="">
+            <img src="../static/qr/{{el.qr_image_name}}" alt="">
         </div>
         {%endif%}
         {%endfor%} 

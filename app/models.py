@@ -22,7 +22,6 @@ class News(db.Model):
     date = db.Column(db.DateTime, default=datetime.now)
     category = db.Column(db.String(100))
     text = db.Column(db.Text)
-    image = db.Column(db.LargeBinary)
     image_name = db.Column(db.String(100))
 
     def __repr__(self):
@@ -45,7 +44,6 @@ class Orders(db.Model):
     date = db.Column(db.DateTime, default=datetime.now)
     service_name = db.Column(db.String(100))
     service_type = db.Column(db.String(100))
-    qr_image = db.Column(db.LargeBinary)
     qr_image_name = db.Column(db.String(100))
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
 

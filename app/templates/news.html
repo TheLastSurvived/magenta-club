@@ -53,10 +53,10 @@
                         {% endif %}
                         
 
-                        {% for el,img in zip(news,img_list)%}
+                        {% for el in news%}
                         <div class="col-6 mb-2">
                             <div class="card shadow-sm">
-                                <img src="data:;base64,{{img}}" alt="">
+                                <img src="../static/img/news/{{el.image_name}}" alt="">
                                 <div class="card-body">
                                   <p class="card-text">{{el.title}}</p>
                                   <small class="text-muted">Категория: {{el.category}}</small>

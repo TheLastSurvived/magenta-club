@@ -2,11 +2,13 @@ from app import app, db
 from flask import render_template, request, flash, redirect, session, url_for,abort
 from .models import User, News, Service, Orders
 from hashlib import md5
-from datetime import datetime
-from base64 import b64encode
 from  sqlalchemy.sql.expression import func
 from cloudipsp import Api, Checkout
+
 import qrcode
+import uuid
+import os
+from werkzeug.utils import secure_filename
 
 
 @app.route('/')
@@ -62,17 +64,16 @@ def contacts():
 @app.route('/news',methods=['GET','POST'])
 def news():
     news = News.query.order_by(News.date.desc()).all()
-    img_list = []
-    for item in news:
-        img_list.append(b64encode(item.image).decode("utf-8"))
-
     if request.method == 'POST':
         try:
             title = request.form.get('title')
             category = request.form.get('category')
             text = request.form.get('ckeditor')
             image = request.files['image']
-            news = News(title=title,category=category,text=text,image=image.read(),image_name=image.filename)
+            filename = secure_filename(image.filename)
+            pic_name = str(uuid.uuid4()) + "_" + filename
+            image.save(os.path.join(app.config['UPLOAD_FOLDER'], pic_name))
+            news = News(title=title,category=category,text=text,image_name=pic_name)
             db.session.add(news)
             db.session.commit()
             flash("Запись добавлена!", category="ok")
@@ -86,27 +87,20 @@ def news():
             seach= seach.capitalize()
             seach = "%{}%".format(seach)
             news_category = News.query.filter(News.category.like(seach) | News.title.like(seach)).all()
-            img_list = []
-            for item in news_category:
-                img_list.append(b64encode(item.image).decode("utf-8"))
-            return render_template("news.html",news=news_category, img_list=img_list,zip=zip)
+            return render_template("news.html",news=news_category)
         else:
-             return render_template("news.html",news=news, img_list=img_list,zip=zip)
-    return render_template("news.html",news=news, img_list=img_list,zip=zip)
+             return render_template("news.html",news=news)
+    return render_template("news.html",news=news)
 
 
 @app.route('/news-page/<int:id>')
 def news_page(id):
     news = News.query.get(id)
     if news:
-        img = b64encode(news.image).decode("utf-8")
         all_news = News.query.filter(News.id!=news.id, News.category==news.category).order_by(func.random()).limit(3).all()
-        img_list = []
-        for item in all_news:
-            img_list.append(b64encode(item.image).decode("utf-8"))
     else:
         abort(404)
-    return render_template("news-page.html",news=news,all_news=all_news,img_list=img_list,img=img,zip=zip)
+    return render_template("news-page.html",news=news,all_news=all_news)
 
 @app.route('/edit-news/<int:id>',methods=['GET','POST'])
 def edit_news(id):
@@ -121,7 +115,10 @@ def edit_news(id):
             news.category = category
             news.text = text
             if image:
-                news.image = image.read()
+                filename = secure_filename(image.filename)
+                pic_name = str(uuid.uuid4()) + "_" + filename
+                image.save(os.path.join(app.config['UPLOAD_FOLDER'], pic_name))
+                news.image_name = pic_name
             db.session.commit()
             flash("Запись обновлена!", category="ok")
             return redirect(url_for("news"))
@@ -148,10 +145,7 @@ def services():
 def user_service_list():
     user = User.query.filter_by(email=session['name']).first()
     orders = Orders.query.filter_by(user_id=user.id).all()
-    img_list = []
-    for item in orders:
-        img_list.append(b64encode(item.qr_image).decode("utf-8"))
-    return render_template("user_service_list.html",orders=orders,img_list=img_list,zip=zip)
+    return render_template("user_service_list.html",orders=orders)
 
 
 @app.route('/buy_service/<int:price>/<string:service_name>/<string:service_type>')
@@ -162,12 +156,10 @@ def buy_service(price,service_name,service_type):
         separator = "/"
         data = separator.join(list_qr)
         qr_image = qrcode.make(data)
-        filename = "app/static/qr" + user.email + datetime.now().strftime('%d.%m.%Y') + ".png"
-        qr_image.save(filename)
-        im = open(filename, "rb")
-        print(im)
-        orders = Orders(price=price,service_name=service_name,service_type=service_type,qr_image=im.read(),qr_image_name=filename,user_id = user.id)
-        im.close()
+        qr_name = str(uuid.uuid4()) + ".png"
+        qr_image.save("app/static/qr/" +  qr_name)
+
+        orders = Orders(price=price,service_name=service_name,service_type=service_type,qr_image_name=qr_name,user_id = user.id)
         db.session.add(orders)
         db.session.commit()
         api = Api(merchant_id=1396424,secret_key='test')

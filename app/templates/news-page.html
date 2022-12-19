@@ -51,7 +51,7 @@
           </form>
         </div>
         {% endif %}
-        <img src="data:;base64,{{img}}" width="100%" alt="">
+        <img src="../static/img/news/{{news.image_name}}" width="100%" alt="">
         <h3 class="pb-1 my-3 font-italic ">
           {{news.title}}
         </h3>
@@ -79,9 +79,9 @@
 
           <div class="last-news">
             {% if all_news %}
-            {% for el,img in zip(all_news,img_list)%}
+            {% for el in all_news%}
             <div class="card shadow-sm mb-2">
-              <img src="data:;base64,{{img}}" alt="">
+              <img src="{{el.image_name}}" alt="">
               <div class="card-body">
                 <p class="card-text">{{el.title}}</p>
                 <small class="text-muted">Категория: {{el.category}}</small>
